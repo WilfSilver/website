@@ -1,6 +1,8 @@
 import IconMail from "@/assets/icons/IconMail.svg";
 import IconGitHub from "@/assets/icons/IconGitHub.svg";
+import IconGitLab from "@/assets/icons/IconGitLab.svg";
 import IconBrandX from "@/assets/icons/IconBrandX.svg";
+import IconMastodon from "@/assets/icons/IconMastodon.svg";
 import IconLinkedin from "@/assets/icons/IconLinkedin.svg";
 import IconWhatsapp from "@/assets/icons/IconWhatsapp.svg";
 import IconFacebook from "@/assets/icons/IconFacebook.svg";
@@ -11,25 +13,31 @@ import { SITE } from "@/config";
 export const SOCIALS = [
   {
     name: "Github",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://github.com/WilfSilver",
     linkTitle: ` ${SITE.title} on Github`,
     icon: IconGitHub,
   },
   {
-    name: "X",
-    href: "https://x.com/username",
-    linkTitle: `${SITE.title} on X`,
-    icon: IconBrandX,
+    name: "GitLab",
+    href: "https://gitlab.com/WilfSilver",
+    linkTitle: ` ${SITE.title} on GitLab`,
+    icon: IconGitLab,
+  },
+  {
+    name: "Mastodon",
+    href: "https://mstdn.social/wilfsilver",
+    linkTitle: `${SITE.title} on Mastodon`,
+    icon: IconMastodon,
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/username/",
+    href: "https://www.linkedin.com/in/hugo-whittome-69053924a/",
     linkTitle: `${SITE.title} on LinkedIn`,
     icon: IconLinkedin,
   },
   {
     name: "Mail",
-    href: "mailto:yourmail@gmail.com",
+    href: "mailto:admin@wilfsilver.co.uk",
     linkTitle: `Send an email to ${SITE.title}`,
     icon: IconMail,
   },
