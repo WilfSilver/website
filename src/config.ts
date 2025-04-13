@@ -4,7 +4,7 @@ export const SITE = {
   profile: "https://wilfsilver.co.uk/",
   desc: "Hugo Whittome",
   title: "Hugo Whittome",
-  // ogImage: "astropaper-og.jpg",
+  ogImage: false,
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 4,
