@@ -11,7 +11,7 @@ Anyhow, I am currently a Computer Science student at university exploring the
 nature of the world and all that nonsense, but mostly just recapping on what I
 have already found in my own time. But just so I can say big words and seem
 smart: I have also been a full time professional (full stack) software
-developer for over 3 years with experience in over 20 programming languages, learnt over the span of
+developer over the last 3 years; with experience in over 20 programming languages, learnt over the span of
 10 years.
 
 ## Interests
