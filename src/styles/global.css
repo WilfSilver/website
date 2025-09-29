@@ -1,3 +1,5 @@
+@import "remark-github-blockquote-alert/alert.css";
+
 @import "tailwindcss";
 @import "./typography.css";
 

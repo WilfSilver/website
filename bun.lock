@@ -12,6 +12,7 @@
         "dayjs": "^1.11.13",
         "lodash.kebabcase": "^4.1.1",
         "remark-collapse": "^0.1.2",
+        "remark-github-blockquote-alert": "^2.0.0",
         "remark-toc": "^9.0.0",
         "satori": "^0.12.1",
         "sharp": "^0.33.5",
@@ -939,6 +940,8 @@
     "remark-collapse": ["remark-collapse@0.1.2", "", { "dependencies": { "mdast-util-heading-range": "^2.0.1", "mdast-util-to-string": "^1.0.2" } }, "sha512-x2lhtaT4nR1Tkp/hftoeiMHbdAntxu5Q9D6lymwMqUtoF2pg3bqNaa8NO/8yyOVhddYk0d0dkhGc+avGUf0lZA=="],
 
     "remark-gfm": ["remark-gfm@4.0.1", "", { "dependencies": { "@types/mdast": "^4.0.0", "mdast-util-gfm": "^3.0.0", "micromark-extension-gfm": "^3.0.0", "remark-parse": "^11.0.0", "remark-stringify": "^11.0.0", "unified": "^11.0.0" } }, "sha512-1quofZ2RQ9EWdeN34S79+KExV1764+wCUGop5CPL1WGdD0ocPpu91lzPGbwWMECpEpd42kJGQwzRfyov9j4yNg=="],
+
+    "remark-github-blockquote-alert": ["remark-github-blockquote-alert@2.0.0", "", { "dependencies": { "unist-util-visit": "^5.0.0" } }, "sha512-n05GsATsJJUm9INz6E9bMcjMdJva0iTQXBOgFqm/DqDOlztxkqpwplVOAqt/6MV/FE7G/Wqskgkbq333CJU3kg=="],
 
     "remark-parse": ["remark-parse@11.0.0", "", { "dependencies": { "@types/mdast": "^4.0.0", "mdast-util-from-markdown": "^2.0.0", "micromark-util-types": "^2.0.0", "unified": "^11.0.0" } }, "sha512-FCxlKLNGknS5ba/1lmpYijMUzX2esxW5xQqjWxw2eHFfS2MSdaHVINFmhjo+qN1WhZhNimq0dZATN9pH0IDrpA=="],
 
