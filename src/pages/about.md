@@ -3,16 +3,11 @@ layout: ../layouts/AboutLayout.astro
 title: "About Me"
 ---
 
-As I have already told you on the front page, my name is Hugo Whittome, but I go by WilfSilver on the interweb (yes that
-is pascal case). I have not decided yet whether there should be a space between
+My IRL name is Hugo Whittome, but I go by WilfSilver on the interweb (yes that
+is pascal case... in most cases). I have not decided yet whether there should be a space between
 the names so we are at the stage of like I'll do it if I'm feeling like it.
 
-Anyhow, I am currently a Computer Science student at university exploring the
-nature of the world and all that nonsense, but mostly just recapping on what I
-have already found in my own time. But just so I can say big words and seem
-smart: I have also been a full time professional (full stack) software
-developer over the last 3 years; with experience in over 20 programming languages, learnt over the span of
-10 years.
+For the boring stuff: I have a Masters in Computer Science (1st), currently a full time professional (full stack) software engineer, working in the cybersecurity sector; with experience in over 20 programming languages, all learnt over the span of over 10 years.
 
 ## Interests
 
@@ -20,9 +15,9 @@ My interests vary on a weekly basis (as my friend says I like to jump at
 anything shiny and organise my whole life around it), but it normally derives
 from:
 
-- Internet privacy - absolute fanatic about this for some reason.
+- Internet privacy - I come from the opinion that for national security and just general security, privacy does actually matter.
 - Programming languages I like: Rust, Zig, Haskell, Perl, (fake statically typed)
-  Python. I mean I have also been doing a lot of TypeScript recently.
+  Python, TypeScript. A bonus one as of writing is Nim.
 - Linux, just Linux.
 - Single player story based games
 - Long walks in the countryside
@@ -30,22 +25,23 @@ from:
   deprecated?
 - Cool stuff
 
-I do ask myself sometimes, is there a life out of Computer Science?
+I do ask myself sometimes, is there a life outside of Computer Science?
 
 ## Tech Stack
 
 As mentioned above, these change regularly, but as of writing this, the
 programs I use are:
 
-- [Void Linux](https://voidlinux.org/) + [XMonad](https://xmonad.org/) +
-  [Eww](https://github.com/elkowar/eww) (I really need to swap to Wayland at some point...)
-- Some sort of Firefox-based browser (because Google). I switch quite a lot, currently I am between the [Zen browser](https://zen-browser.app/) and [LibreWolf](https://librewolf.net/)
+- ~[Void Linux](https://voidlinux.org/) + [XMonad](https://xmonad.org/) +
+  [Eww](https://github.com/elkowar/eww) (I really need to swap to Wayland at some point...)~, [Fedora Silverblue](https://fedoraproject.org/atomic-desktops/silverblue/) + TBD: river
+- Some sort of Firefox-based browser (because Google). I switch quite a lot, mostly on [LibreWolf](https://librewolf.net/), but bonus points to [Zen browser](https://zen-browser.app/) for nearly making me switch.
 - [AstroNvim](https://astronvim.com/) since [LunarVim](https://www.lunarvim.org/) was deprecated, unless having to use Jupyter notebooks
   (which is sadly happening more and more often) which in that case its
   [VSCodium](https://vscodium.com/)
 - [Proton Mail](https://proton.me/mail) with [SimpleLogin](https://simplelogin.io/) (but they have now been merged into a single thing)
 - [Anytype](https://anytype.io/) for note taking which is probably a bit of an odd one out here 🤷
 - YubiKey - they are so so so cool
+- [TrueNAS](https://www.truenas.com/), [CoreOS](https://fedoraproject.org/coreos/) and [hardened K3S](https://k3s.io/), for self-hosting stuff, but that requires its own breakdown.
 
 ## Past Projects
 
