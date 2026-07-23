@@ -1,7 +1,7 @@
 ---
 title: The search for a no-JS theme toggle
 author: Wilf Silver
-pubDatetime: 2025-07-17T20:30:00Z
+pubDatetime: 2026-07-23T21:11:00Z
 slug: nojs_theme
 featured: true
 draft: false
