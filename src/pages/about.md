@@ -58,9 +58,8 @@ I have worked on a bunch of projects, sadly a lot of them are not open source (b
 - [RacketReady](https://github.com/ESP-Number-One/RacketReady) -- University group coursework, where we created a (just about) progressive web app for finding pairs for different sports at the university. Used React for frontend and [TSOA](https://github.com/lukeautry/tsoa) for backend
 - [BathCS Wiki](https://wiki.bathcs.com/) -- More of a side project for me at University of writing up a bunch of knowledge for hosting projects for free and some basic organisation and security procedures. Built using Astro Starlight theme (so no coding sorry)
 
-On the side of all of this I have also setup a [kubernetes](https://kubernetes.io/) cluster (with [k3s](https://k3s.io/)) at home running
-[Vaultwarden](https://github.com/dani-garcia/vaultwarden) and [Dendrite](https://github.com/matrix-org/dendrite). To back
-it up I use [volero](https://velero.io/) and push to another NAS in the house. But this cluster is mostly there for me to experiment with and have a bit of fun, like setting up an LDAP server and Mailserver (both have yet to be migrated over to kubernetes though).
+On the side of all of this I have also setup a [kubernetes](https://kubernetes.io/) cluster (with dual-stack hardened [k3s](https://k3s.io/) across 5 nodes) at home running some self-hosted applications. To back
+it up I use [volero](https://velero.io/) and push to another NAS in the house. But this cluster is mostly there for me to experiment with and have a bit of fun, like setting up an LDAP server and Mailserver.
 
 ## Blog theme
 
