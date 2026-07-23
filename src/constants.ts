@@ -25,7 +25,7 @@ export const SOCIALS = [
   },
   {
     name: "Mastodon",
-    href: "https://mstdn.social/wilfsilver",
+    href: "https://mstdn.social/@wilfsilver",
     linkTitle: `${SITE.title} on Mastodon`,
     icon: IconMastodon,
   },
