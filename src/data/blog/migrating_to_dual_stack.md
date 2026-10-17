@@ -34,8 +34,8 @@ My setup is very similar to the base k3s install, changing nothing (except disab
 
 In terms of node structure:
 
-* I have one control node (sadly, but I plan to be changing this in the future) on bare metal
-* 3 agent nodes, one on bare metal and 2 in a VM
+- I have one control node (sadly, but I plan to be changing this in the future) on bare metal
+- 3 agent nodes, one on bare metal and 2 in a VM
 
 All of which run Fedora Server, meaning they have a GUI accessible through `9090`. Speaking of which, if you are attempting this yourself, make sure you have access to each node over SSH all times and maybe even physical access. I performed this remotely, but did need physical access as one node decided to randomly turn off (but once turned back on it was fine).
 
@@ -61,7 +61,7 @@ Once this is done, when you restart the network on your devices, they should be 
 
 Cack the data up, and I really would not recommend using k3s base storage, **please migrate all your storage into a cluster friendly storage option like longhorn**. This personally saved me, but also it did then cause more issues due to the data redundancy on the different nodes.
 
-For backups, I used both longhorns inbuilt backup tool and velero (making sure all important data was successfully backed up, as it doesn't particularly like pvs). You should also test that your backups do work before continuing with this migration,  as there is a large chance you will have to use it.
+For backups, I used both longhorns inbuilt backup tool and velero (making sure all important data was successfully backed up, as it doesn't particularly like pvs). You should also test that your backups do work before continuing with this migration, as there is a large chance you will have to use it.
 
 I did have to rely on longhorns backup for some persistent volumes due to going too fast and nodes going down randomly during this transition.
 
@@ -84,7 +84,6 @@ So this is a basic plan with a few tweaks from my experience, but mostly worked 
 
 > [!NOTE]
 > Once the IP range has changed you cannot restart any of the nodes (especially the control node), as otherwise it will refuse to boot
-
 
 Once the IP range, each node individually has to be removed and re-added, starting with the control node (due to if it loses its IPv4 it's doomed):
 
@@ -120,9 +119,9 @@ You will also want to restart the nodes at some point as well to shed the traili
 
 I found that longhorn managers got stuck trying and failing to recover volumes that had faulted. Additionally, to this, the `driver-deployer` pod was failing to get responses from `longhorn-backend` and the pods with storage were all saying they can't attach storage due to time-outs. This personally took me around 3 hours to fix due to the multitude of different errors which were happening at the same time. But I did manage to qualm the storm by doing the following:
 
-* As mentioned before, scaling down all nodes which used storage to zero. This would mean that all "attach" and "detach" requests stopped overwhelming longhorn, but you will also probably want to make sure "Offline Replica Rebuilding" was turned off in the settings, so the longhorn managers don't continue to try and recover the nodes.
-* Additionally, it seemed that `longhorn-backend` was failing to be queried from the DNS, and so I scaled up and down the CoreDNS as appropriate (mostly making sure that it could be consistently queried as I think some of my nodes were not liking hosting the DNS, but I fixed this with updating some of the K3S parameters)
-* After doing this, I was able to wait about 30 minutes before the longhorn UI become much more responsive, and I could perform actions again such as recovering for backups where the volumes had faulted or that there were no nodes with the volume.
+- As mentioned before, scaling down all nodes which used storage to zero. This would mean that all "attach" and "detach" requests stopped overwhelming longhorn, but you will also probably want to make sure "Offline Replica Rebuilding" was turned off in the settings, so the longhorn managers don't continue to try and recover the nodes.
+- Additionally, it seemed that `longhorn-backend` was failing to be queried from the DNS, and so I scaled up and down the CoreDNS as appropriate (mostly making sure that it could be consistently queried as I think some of my nodes were not liking hosting the DNS, but I fixed this with updating some of the K3S parameters)
+- After doing this, I was able to wait about 30 minutes before the longhorn UI become much more responsive, and I could perform actions again such as recovering for backups where the volumes had faulted or that there were no nodes with the volume.
 
 Once the UI was responsive, I was more confident to scale back up deployments/statefulsets which required volumes (making sure to only do two at a time to make sure that longhorn had time to handle the requests).
 
@@ -147,7 +146,6 @@ service:
     ipFamilies:
       - IPv4
       - IPv6
-
 # ...
 ```
 

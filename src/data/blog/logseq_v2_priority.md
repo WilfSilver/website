@@ -82,7 +82,7 @@ So for the logseq v1 I just copied some examples from the internet and produced:
           result)))
     :group-by-page? false
     :collapsed? false}
- 
+
    {:title "📅 NEXT"
     :query [:find (pull ?h [*])
             :in $ ?start ?next
@@ -119,15 +119,15 @@ These could definitely be improved but provided a nice base for me to work off o
 
 Although logseq v1 provides a nice base, coming from AnyType you can see the rough edges. For example,
 
-* The big one for me is asset management is quite basic, with the only way to tag assets and link them to specific projects or items, you have to create a highlights page.
-* If you are not specifically using the advanced queries, it is quite hard to actually search for what you want and the interface is not particularly intuitive.
-* When you type `/schedule` there is a good chance the text you just wrote will be deleted and you will have to rewrite it.
-* No icons for pages, when you just want to add a bit of class (though these a plugin for that).
-* The tagging system is quite basic, and only produces a list of pages on the website (and doesn't even list blocks).
-* Builtin properties such as schedule break the usual formatting of properties.
-* Putting `TODO` at the start of a block for the marker feels a bit hacky, and means when I want to change it to CANCELLED, in my queries I will get half way through writing when it just disappears.
-* To sync your files to your phone you must use iCloud on iOS (which is not encrypted) or something like syncthing on android which is not easy for non-technical users.
-* With much larger graphs, it starts to slow down.
+- The big one for me is asset management is quite basic, with the only way to tag assets and link them to specific projects or items, you have to create a highlights page.
+- If you are not specifically using the advanced queries, it is quite hard to actually search for what you want and the interface is not particularly intuitive.
+- When you type `/schedule` there is a good chance the text you just wrote will be deleted and you will have to rewrite it.
+- No icons for pages, when you just want to add a bit of class (though these a plugin for that).
+- The tagging system is quite basic, and only produces a list of pages on the website (and doesn't even list blocks).
+- Builtin properties such as schedule break the usual formatting of properties.
+- Putting `TODO` at the start of a block for the marker feels a bit hacky, and means when I want to change it to CANCELLED, in my queries I will get half way through writing when it just disappears.
+- To sync your files to your phone you must use iCloud on iOS (which is not encrypted) or something like syncthing on android which is not easy for non-technical users.
+- With much larger graphs, it starts to slow down.
 
 This is where V2 comes in from logseq, it tries to solve a lot of these issues by moving towards storing all your notes in a sqlite database instead of in raw markdown. If you go to their website now and click download, this is the version you will download (even though the apps on the google play and apple app stores are the old version and are incompatible and its still in beta), I slightly disagree with this as it feels like Pop OS all over again but we will skim past this.
 
@@ -135,14 +135,15 @@ This is where V2 comes in from logseq, it tries to solve a lot of these issues b
 
 However, as it is an official major version, there are some serious breaking changes and just regular changes in addition to a UI overhaul, luckily this is nicely listed in [their database version markdown file](https://github.com/logseq/docs/blob/master/db-version-changes.md):
 
-* Advanced queries (on the page) no longer support `sort-by`, instead require you to use the sort parameters when the query appears.
-* Tasks have been made legit, no longer using `markers`, and schedules and deadlines are proper priorities. And so properties are renamed:
-  * `:block/marker` -> `:logseq.property/status`
-  * `:block/scheduled` -> `:logseq.property/scheduled`
-  * `:block/deadline` -> `:logseq.property/deadline`
+- Advanced queries (on the page) no longer support `sort-by`, instead require you to use the sort parameters when the query appears.
+- Tasks have been made legit, no longer using `markers`, and schedules and deadlines are proper priorities. And so properties are renamed:
+  - `:block/marker` -> `:logseq.property/status`
+  - `:block/scheduled` -> `:logseq.property/scheduled`
+  - `:block/deadline` -> `:logseq.property/deadline`
 
   Additionally, as these are now database attributes, you must access them through: `(property h :logseq.property/deadline ?d)`
-* `:today` no longer exists, nor does `:7d-after`, you now must instead specify `-end` and use `:+7d` or `:-7d`, so e.g. `:today-end` or `:today-start` or `:+7d-end` or `:-7d-start`... This one was definitely quite difficult to figure out given its not listed in the version doc.
+
+- `:today` no longer exists, nor does `:7d-after`, you now must instead specify `-end` and use `:+7d` or `:-7d`, so e.g. `:today-end` or `:today-start` or `:+7d-end` or `:-7d-start`... This one was definitely quite difficult to figure out given its not listed in the version doc.
 
 Okay so simple we just update the queries to be of form:
 
@@ -287,9 +288,9 @@ With this now nothing is outputted. And all the other things I tried could not g
 
 Okay so what we have learned at this point?
 
-* `:logseq.property/priority` is now a reference to a database row.
-* We cannot pull from the database in `:result-transform`
-* We can pass the information through with `:keys` but cannot then have logseq display it as a table.
+- `:logseq.property/priority` is now a reference to a database row.
+- We cannot pull from the database in `:result-transform`
+- We can pass the information through with `:keys` but cannot then have logseq display it as a table.
 
 ### Side tangent: What does (pull) even mean?
 
@@ -366,13 +367,13 @@ Notice how the uuid's match on different attributes, this would suggest that we 
 
 Searching logseq's source code we find out a few:
 
-* [`db/ident`](https://github.com/logseq/logseq/blob/32570a626aba699c089f20f9c940a6cb127c3add/src/test/frontend/components/property/value_test.cljs#L243) -- Identity used throught the code: `:logseq.property/priority.urgent`, `:logseq.property/priority.high`, `:logseq.property/priority.medium`, `:logseq.property/priority.low`
-* [`logseq.property/icon`](https://github.com/logseq/logseq/blob/32570a626aba699c089f20f9c940a6cb127c3add/src/test/frontend/components/property/value_test.cljs#L244) - Some information about the icon itself
+- [`db/ident`](https://github.com/logseq/logseq/blob/32570a626aba699c089f20f9c940a6cb127c3add/src/test/frontend/components/property/value_test.cljs#L243) -- Identity used throught the code: `:logseq.property/priority.urgent`, `:logseq.property/priority.high`, `:logseq.property/priority.medium`, `:logseq.property/priority.low`
+- [`logseq.property/icon`](https://github.com/logseq/logseq/blob/32570a626aba699c089f20f9c940a6cb127c3add/src/test/frontend/components/property/value_test.cljs#L244) - Some information about the icon itself
 
 Then if you follow `logseq.property/icon` you can also find:
 
-* [`block/order`](https://github.com/logseq/logseq/blob/32570a626aba699c089f20f9c940a6cb127c3add/src/main/frontend/handler/db_based/property/util.cljs#L48) -- random string which seems to help ordering
-* [`block/title`](https://github.com/logseq/logseq/blob/32570a626aba699c089f20f9c940a6cb127c3add/src/main/frontend/handler/db_based/property/util.cljs#L46) -- Either "Urgent", "High", "Medium" or "Low"
+- [`block/order`](https://github.com/logseq/logseq/blob/32570a626aba699c089f20f9c940a6cb127c3add/src/main/frontend/handler/db_based/property/util.cljs#L48) -- random string which seems to help ordering
+- [`block/title`](https://github.com/logseq/logseq/blob/32570a626aba699c089f20f9c940a6cb127c3add/src/main/frontend/handler/db_based/property/util.cljs#L46) -- Either "Urgent", "High", "Medium" or "Low"
 
 I wasn't able to find any others but this should do what we need.
 
@@ -433,7 +434,7 @@ So pulling everything together we can finally fully translate the old queries to
         )
       ) result))
     :sort-by-schedule-then-priority
-      (fn [result] (sort-by (juxt 
+      (fn [result] (sort-by (juxt
         (fn [h] (get h :logseq.property/scheduled (get h :logseq.property/deadline 0)))
         (fn [h]
           (get
@@ -448,7 +449,7 @@ So pulling everything together we can finally fully translate the old queries to
         )
       ) result))
     :sort-by-priority-then-schedule
-      (fn [result] (sort-by (juxt 
+      (fn [result] (sort-by (juxt
         (fn [h]
           (get
             {
@@ -510,7 +511,7 @@ So pulling everything together we can finally fully translate the old queries to
       :inputs [:-365d-start :today-start]
       :result-transform :sort-by-priority-then-schedule
     }
- 
+
     {
       :title "📅 NEXT"
       :query [

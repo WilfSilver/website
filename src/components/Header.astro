@@ -46,16 +46,21 @@ const isActive = (path: string) => {
         href="/"
         class="absolute py-1 text-2xl leading-7 font-semibold whitespace-nowrap sm:static"
       >
-        <Picture src={profile} alt="" role="presentation" class="size-16 inline" />
+        <Picture
+          src={profile}
+          alt=""
+          role="presentation"
+          class="inline size-16"
+        />
         {SITE.title}
       </a>
       <nav
         id="nav-menu"
-        class="flex w-full flex-col items-center min-h-16 sm:ml-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"
+        class="flex min-h-16 w-full flex-col items-center sm:ml-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"
       >
         <button
           id="menu-btn"
-          class="focus-outline self-end p-2 sm:hidden justify-self-center mt-3"
+          class="focus-outline mt-3 self-end justify-self-center p-2 sm:hidden"
           aria-label="Open Menu"
           aria-expanded="false"
           aria-controls="menu-items"
