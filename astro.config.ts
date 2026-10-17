@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
+import favicons from "astro-favicons";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import { remarkAlert } from "remark-github-blockquote-alert";
@@ -18,6 +19,11 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) => SITE.showArchives || !page.endsWith("/archives"),
+    }),
+    favicons({
+      input: {
+        favicons: ["src/assets/profile_small.svg"],
+      },
     }),
   ],
   markdown: {
