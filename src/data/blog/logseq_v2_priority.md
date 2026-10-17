@@ -1,7 +1,7 @@
 ---
 title: Logseq v2 queries and where to find them
 author: Wilf Silver
-pubDatetime: 2026-10-17T19:30:00Z
+pubDatetime: 2026-10-17T19:00:00Z
 slug: logseq_v2_queries
 featured: true
 draft: false
