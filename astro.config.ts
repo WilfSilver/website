@@ -21,9 +21,9 @@ export default defineConfig({
       filter: page => SITE.showArchives || !page.endsWith("/archives"),
     }),
     favicons({
-      input: {
-        favicons: ["src/assets/profile_small.svg"],
-      },
+      input: "src/assets/profile_small.svg",
+      name: "Wilf Silver",
+      short_name: "Wilf Silver",
     }),
   ],
   markdown: {

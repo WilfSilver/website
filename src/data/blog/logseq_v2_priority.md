@@ -385,7 +385,7 @@ Now that we have all the parts we can write a query that selects all the informa
 
 If we wanted to just use `block/order` we can use:
 
-```edn
+```clojure
   :sort-by-priority
     (fn [result] (reverse (sort-by (fn [h] (get-in h [:logseq.property/priority :block/order] "b09")) result)))
 ```
