@@ -39,7 +39,7 @@ programs I use are:
   (which is sadly happening more and more often) which in that case its
   [VSCodium](https://vscodium.com/)
 - [Proton Mail](https://proton.me/mail) with [SimpleLogin](https://simplelogin.io/) (but they have now been merged into a single thing)
-- [Anytype](https://anytype.io/) for note taking which is probably a bit of an odd one out here 🤷
+- [Logseq](https://logseq.io/) for note taking and task management, as the journal method is just superior.
 - YubiKey - they are so so so cool
 - [TrueNAS](https://www.truenas.com/), [CoreOS](https://fedoraproject.org/coreos/) and [hardened K3S](https://k3s.io/), for self-hosting stuff, but that requires its own breakdown.
 
@@ -56,7 +56,7 @@ I have worked on a bunch of projects, sadly a lot of them are not open source (b
 - [MagmaCube](https://github.com/WilfSilver/magma_cube) -- BathHack 2023 project with my friends, where we did slime mould simulation in Python and OpenGL compute shaders
 - [RaceCondition](https://github.com/Please-Change) -- BathHack 2024 project with my friends, a competitive programming competition game with mario-like buffs and counters with a fatal flaw of new lines not correctly being escaped when running the tests. Used Go for the backend and Svelte for the frontend.
 - [RacketReady](https://github.com/ESP-Number-One/RacketReady) -- University group coursework, where we created a (just about) progressive web app for finding pairs for different sports at the university. Used React for frontend and [TSOA](https://github.com/lukeautry/tsoa) for backend
-- [BathCS Wiki](https://wiki.bathcs.com/) -- More of a side project for me at University of writing up a bunch of knowledge for hosting projects for free and some basic organisation and security procedures. Built using Astro Starlight theme (so no coding sorry)
+- [BathCS Wiki](https://wiki.bathcs.com/), (original version got moved to [Bath Open Source Societies' Guides](https://boss.bathcs.com)) -- More of a side project for me at University of writing up a bunch of knowledge for hosting projects for free and some basic organisation and security procedures. Built using Astro Starlight theme (so no coding sorry)
 
 On the side of all of this I have also setup a [kubernetes](https://kubernetes.io/) cluster (with dual-stack hardened [k3s](https://k3s.io/) across 5 nodes) at home running some self-hosted applications. To back
 it up I use [volero](https://velero.io/) and push to another NAS in the house. But this cluster is mostly there for me to experiment with and have a bit of fun, like setting up an LDAP server and Mailserver.
