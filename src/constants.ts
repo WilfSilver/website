@@ -10,7 +10,15 @@ import IconTelegram from "@/assets/icons/IconTelegram.svg";
 import IconPinterest from "@/assets/icons/IconPinterest.svg";
 import { SITE } from "@/config";
 
-export const SOCIALS = [
+interface Social {
+  name: string;
+  href: string;
+  linkTitle: string;
+  icon: typeof IconPinterest;
+  rel?: string;
+}
+
+export const SOCIALS: Social[] = [
   {
     name: "Github",
     href: "https://github.com/WilfSilver",
@@ -25,6 +33,7 @@ export const SOCIALS = [
   },
   {
     name: "Mastodon",
+    rel: "me",
     href: "https://mstdn.social/@wilfsilver",
     linkTitle: `${SITE.title} on Mastodon`,
     icon: IconMastodon,
