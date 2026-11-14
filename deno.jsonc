@@ -1,0 +1,24 @@
+{
+  "tasks": {
+    "prettier": "deno run -A npm:prettier",
+    "eslint": "deno run -A npm:eslint",
+    "astro": "deno run -A npm:astro",
+
+    "lint": "deno task eslint .",
+    "lint:fix": "deno task lint --write",
+    "format": "deno task prettier .",
+    "format:check": "deno task prettier --check .",
+
+    "dev": "deno task astro dev",
+    "build": "deno task astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
+    "preview": "deno task astro preview",
+    "sync": "deno task astro sync"
+  },
+  "minimumDependencyAge": "P2D",
+  "vendor": true,
+  "lock": { "frozen": true },
+  "allowScripts": {
+    "allow": ["npm:esbuild@0.27.7", "npm:sharp@0.34.5"],
+    "deny": ["npm:esbuild@0.25.12", "npm:sharp@0.33.5"]
+  }
+}

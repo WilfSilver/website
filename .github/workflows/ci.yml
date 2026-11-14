@@ -21,19 +21,19 @@ jobs:
 
     steps:
       - name: "☁️ Checkout repository"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      - name: "📦 Install bun"
-        uses: oven-sh/setup-bun@v2
+      - name: "📦 Install deno"
+        uses: denoland/setup-deno@v2
 
       - name: "📦 Install dependencies"
-        run: bun install
+        run: deno install
 
       - name: "🔎 Lint code"
-        run: bun run lint
+        run: deno task lint
 
       - name: "📝 Checking code format"
-        run: bun run format:check
+        run: deno task format:check
 
       - name: "🚀 Build the project"
-        run: bun run build
+        run: deno task build
