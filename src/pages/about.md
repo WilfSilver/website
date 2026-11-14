@@ -39,7 +39,7 @@ programs I use are:
   (which is sadly happening more and more often) which in that case its
   [VSCodium](https://vscodium.com/)
 - [Proton Mail](https://proton.me/mail) with [SimpleLogin](https://simplelogin.io/) (but they have now been merged into a single thing)
-- [Logseq](https://logseq.io/) for note taking and task management, as the journal method is just superior.
+- [Logseq](https://logseq.com/) for note taking and task management, as the journal method is just superior.
 - YubiKey - they are so so so cool
 - [TrueNAS](https://www.truenas.com/), [CoreOS](https://fedoraproject.org/coreos/) and [hardened K3S](https://k3s.io/), for self-hosting stuff, but that requires its own breakdown.
 
